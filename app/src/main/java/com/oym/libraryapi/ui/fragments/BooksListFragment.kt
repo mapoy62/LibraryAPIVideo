@@ -1,5 +1,6 @@
 package com.oym.libraryapi.ui.fragments
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -10,22 +11,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.oym.libraryapi.R
 import com.oym.libraryapi.application.LibraryApp
 import com.oym.libraryapi.data.BookRepository
 import com.oym.libraryapi.data.remote.model.BookDTO
 import com.oym.libraryapi.databinding.FragmentBooksListBinding
+import com.oym.libraryapi.ui.MainActivity
 import com.oym.libraryapi.ui.adapters.BooksAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.oym.libraryapi.ui.message
 
 class BooksListFragment : Fragment() {
 
     private var _binding: FragmentBooksListBinding? = null
     private val binding get() = _binding!!
     private var mediaPlayer: MediaPlayer? = null
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var repository: BookRepository
 

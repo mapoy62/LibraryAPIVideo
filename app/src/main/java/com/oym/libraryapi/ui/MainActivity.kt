@@ -8,10 +8,13 @@ import androidx.core.view.WindowInsetsCompat
 import com.oym.libraryapi.R
 import com.oym.libraryapi.databinding.ActivityMainBinding
 import com.oym.libraryapi.ui.fragments.BooksListFragment
+import com.oym.libraryapi.ui.fragments.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         //Mostrando el fragment inicial de Book_List_Fragment
         if (savedInstanceState == null){
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, BooksListFragment())
+                //.replace(R.id.fragment_container, BooksListFragment())
+                .replace(R.id.fragment_container, LoginFragment())
                 .commit()
         }
     }
