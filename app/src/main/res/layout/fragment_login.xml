@@ -25,7 +25,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/top_background" />
+                android:contentDescription="@string/header_top" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,21 +34,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="i"
-                    android:textColor="#707070"
-                    android:textSize="75sp" />
-
-                <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:text="Diplo"
-                    android:textColor="#8102b7"
+                    android:text="@string/libraryapp"
+                    android:textColor="@color/fontTitle"
                     android:textSize="75sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -57,9 +48,9 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cursos móviles"
+                android:text="@string/bibliotecas_cdmx"
                 android:textAlignment="center"
-                android:textColor="#001764"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -70,7 +61,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Correo electrónico"
+                android:hint="@string/correo_electr_nico"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
@@ -94,7 +85,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Contraseña"
+                android:hint="@string/contrase_a"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
@@ -118,10 +109,10 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:backgroundTint="@android:color/holo_orange_dark"
-                android:text="Ingresar"
+                android:backgroundTint="@color/primaryBtn"
+                android:text="@string/ingresar"
                 android:textAllCaps="false"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp" />
@@ -133,10 +124,10 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:backgroundTint="#440877"
-                android:text="Registrarse"
+                android:backgroundTint="@color/secBtn"
+                android:text="@string/registrarse"
                 android:textAllCaps="false"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp" />
@@ -148,9 +139,9 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:text="¿Olvidó su contraseña? Restablecer aquí"
+                android:text="@string/contraseniaOlvidad"
                 android:textAlignment="center"
-                android:textColor="#0E66CC"
+                android:textColor="@color/primaryBtn"
                 android:textSize="16sp" />
 
             <View
@@ -161,7 +152,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="10dp"
-                android:background="#707070" />
+                android:background="@color/brown" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -170,10 +161,10 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="© Diplo Móviles"
+                android:text="@string/ddm_android"
                 android:textAlignment="center"
-                android:textColor="#04336a"
-                android:textSize="16sp" />
+                android:textColor="@color/black"
+                android:textSize="12sp" />
         </LinearLayout>
     </ScrollView>
 

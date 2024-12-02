@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
-        android:text="Cerrar Sesión"
+        android:text="@string/cerrar_sesi_n"
         android:textColor="@color/white"
         android:backgroundTint="@color/black"
         android:padding="12dp" />
