@@ -36,5 +36,11 @@ data class BookDetailDTO(
     var description: String? = null,
 
     @SerializedName("videoId")
-    var videoId: String? = null
+    var videoId: String? = null,
+
+    @SerializedName("latitude")
+    var latitude: Double? = 0.0,
+
+    @SerializedName("longitude")
+    var longitude: Double? = 0.0
 )

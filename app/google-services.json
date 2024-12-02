@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "315372376310",
+    "project_id": "libraryapivideo",
+    "storage_bucket": "libraryapivideo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315372376310:android:f086a23eee42097ae31cd7",
+        "android_client_info": {
+          "package_name": "com.oym.libraryapi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI6-yGoXhCAEWBM3vhV9krJipnrOpA0tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

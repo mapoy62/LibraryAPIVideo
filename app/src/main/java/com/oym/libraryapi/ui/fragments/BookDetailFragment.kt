@@ -7,6 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.oym.libraryapi.R
 import com.oym.libraryapi.application.LibraryApp
 import com.oym.libraryapi.data.BookRepository
@@ -21,7 +27,7 @@ import retrofit2.Response
 
 private const val BOOK_ID = "book_id"
 
-class BookDetailFragment : Fragment() {
+class BookDetailFragment : Fragment(), OnMapReadyCallback {
 
     private var bookId: Int? = null
 
@@ -29,6 +35,11 @@ class BookDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var repository: BookRepository
+
+    private lateinit var mMap: GoogleMap
+
+    private var latitude: Double? = null
+    private var longitude: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +54,11 @@ class BookDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentBookDetailBinding.inflate(inflater, container, false)
+
+        // Inicializar el SupportMapFragment y obtener el mapa
+        val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
         return binding.root
     }
 
@@ -87,6 +103,16 @@ class BookDetailFragment : Fragment() {
                         } else {
                             binding.vvBook.visibility = View.GONE
                         }
+
+                        // Asignar coordenadas
+                        latitude = response.body()?.latitude
+                        longitude = response.body()?.longitude
+
+                        // Verificar y cargar el mapa
+                        if (latitude != null && longitude != null) {
+                            val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as? SupportMapFragment
+                            mapFragment?.getMapAsync(this@BookDetailFragment)
+                        }
                     }
                 }
 
@@ -94,6 +120,17 @@ class BookDetailFragment : Fragment() {
                     //Manejando los errores de conexión
                 }
             })
+        }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        // Usar las coordenadas para mostrar el marcador en el mapa
+        latitude?.let { lat ->
+            longitude?.let { lng ->
+                val location = LatLng(lat, lng)
+                googleMap.addMarker(MarkerOptions().position(location).title("Ubicación del libro"))
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+            }
         }
     }
 

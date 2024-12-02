@@ -123,6 +123,23 @@
                             android:layout_centerInParent="true" />
                     </RelativeLayout>
 
+                    <!-- Mapa de Google Maps -->
+                    <FrameLayout
+                        android:id="@+id/mapContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white">
+
+                        <fragment
+                            android:id="@+id/mapFragment"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </FrameLayout>
+
                 </LinearLayout>
 
             </ScrollView>
